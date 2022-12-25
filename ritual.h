@@ -6,31 +6,11 @@
 #include <string>
 #include <numeric> //для accumulate()
 #include <iomanip>
+#include "product.h"
 using namespace std;
 //////////////////// глобальные методы //////////////////////
 void getaLine(string& inStr); // получение строки текста
 char getaChar(); // получение символа
-
-
-//////////////////// класс Product (товары/услуги) /////////////////
-//Он хранит имя товара/услуги, артикул и цену
-//В последующих комментариях "товар/услуга" будет сокращено до "товар"
-//для повышения читабельности
-class Product
-{
-private:
-    string name; // название товара
-    int article; // артикул товара
-    float price;
-public:
-    Product(string n, int art, float pr);
-    ~Product();
-    int getArticle(); //возвращает артикул товара
-    float getPrice(); //возращает цену товара
-    string getName(); //возвращает название товара
-};
-
-
 
 ///////////////////класс ProductList////////////////////////
 //класс ProductList — список всех товаров.

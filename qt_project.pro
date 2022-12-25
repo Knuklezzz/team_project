@@ -4,11 +4,13 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    ritual.cpp
+    ritual.cpp \
+    product.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
 
 HEADERS += \
-    ritual.h
+    ritual.h \
+    product.h
 
