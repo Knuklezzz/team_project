@@ -6,73 +6,12 @@
 #include <string>
 #include <numeric> //для accumulate()
 #include <iomanip>
+#include "productlist.h"
+#include "productinputscreen.h"
 using namespace std;
 //////////////////// глобальные методы //////////////////////
 void getaLine(string& inStr); // получение строки текста
 char getaChar(); // получение символа
-
-
-//////////////////// класс Product (товары/услуги) /////////////////
-//Он хранит имя товара/услуги, артикул и цену
-//В последующих комментариях "товар/услуга" будет сокращено до "товар"
-//для повышения читабельности
-class Product
-{
-private:
-    string name; // название товара
-    int article; // артикул товара
-    float price;
-public:
-    Product(string n, int art, float pr);
-    ~Product();
-    int getArticle(); //возвращает артикул товара
-    float getPrice(); //возращает цену товара
-    string getName(); //возвращает название товара
-};
-
-
-
-///////////////////класс ProductList////////////////////////
-//класс ProductList — список всех товаров.
-//Он содержит множество указателей на класс Product
-//и оперирует ими при выводе
-class ProductList
-{
-private:
-    // установить указатели на товары
-    list <Product*> setPtrsProd; // указатели на класс Product
-    list <Product*>::iterator iter; //итератор
-public:
-    ~ProductList(); // деструктор (удаление товаров)
-    void insertProduct(Product*); // добавить товар в список
-    int getArt(string); // возвращает артикул товара
-    float getPrc(string); //возращает цену товара
-    void display(); // вывод списка товаров
-};
-
-
-
-
-////////////////класс ProductInputScreen////////////////////
-//класс ProductInputScreen. Это класс, отвечающий за отображение «экрана»,
-//куда пользователь может ввести данные о новом товаре:
-class ProductInputScreen
-
-{
-private:
-    ProductList* ptrProductList;
-    string pName;
-    int art;
-    float prc;
-public:
-    ProductInputScreen(ProductList* ptrPL) : ptrProductList(ptrPL)
-    {
-        /* тут пусто */
-    }
-    void setProduct(); // добавить данные о товаре
-};
-
-
 
 
 ////////////////////класс RevenueRow//////////////////////////
