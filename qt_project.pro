@@ -8,7 +8,8 @@ SOURCES += main.cpp \
     product.cpp \
     productlist.cpp \
     productinputscreen.cpp \
-    revenuerow.cpp
+    revenuerow.cpp \
+    revenuerecord.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
@@ -18,5 +19,6 @@ HEADERS += \
     product.h \
     productlist.h \
     productinputscreen.h \
-    revenuerow.h
+    revenuerow.h \
+    revenuerecord.h
 
