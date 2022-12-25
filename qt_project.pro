@@ -7,7 +7,8 @@ SOURCES += main.cpp \
     ritual.cpp \
     product.cpp \
     productlist.cpp \
-    productinputscreen.cpp
+    productinputscreen.cpp \
+    revenuerow.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
@@ -16,5 +17,6 @@ HEADERS += \
     ritual.h \
     product.h \
     productlist.h \
-    productinputscreen.h
+    productinputscreen.h \
+    revenuerow.h
 
