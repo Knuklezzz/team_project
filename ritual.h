@@ -21,12 +21,12 @@ class Product
 private:
     string name; // название товара
     int article; // артикул товара
-    int price;
+    float price;
 public:
-    Product(string n, int art, int pr);
+    Product(string n, int art, float pr);
     ~Product();
     int getArticle(); //возвращает артикул товара
-    int getPrice(); //возращает цену товара
+    float getPrice(); //возращает цену товара
     string getName(); //возвращает название товара
 };
 
@@ -46,7 +46,7 @@ public:
     ~ProductList(); // деструктор (удаление товаров)
     void insertProduct(Product*); // добавить товар в список
     int getArt(string); // возвращает артикул товара
-    int getPrc(string); //возращает цену товара
+    float getPrc(string); //возращает цену товара
     void display(); // вывод списка товаров
 };
 
@@ -63,7 +63,7 @@ private:
     ProductList* ptrProductList;
     string pName;
     int art;
-    int prc;
+    float prc;
 public:
     ProductInputScreen(ProductList* ptrPL) : ptrProductList(ptrPL)
     {
@@ -83,10 +83,10 @@ class RevenueRow
 private:
     int art; // артикул товара
     float revenue[12]; // месяцы
-    int prc; //стоимость товара
+    float prc; //стоимость товара
 public:
     RevenueRow(int); // конструктор с одним параметром
-    void setRevenue(int, float, int); // подсчитать выручку за месяц
+    void setRevenue(int, int, float); // подсчитать выручку за месяц
     float getSumOfRow(); //подсчитать сумму выручек с одного товара за год
     int getArt(); //Запрос артикула товара
     float getRevenueM(int); //Запрос выручки за определенный месяц
@@ -105,7 +105,7 @@ private:
     list <RevenueRow*>::iterator iter;
 public:
     ~RevenueRecord();
-    void insertRevenue(int, int, float, int); // добавить выручку
+    void insertRevenue(int, int, int, float); // добавить выручку
     void display(); // отобразить все строки с выручками
     float getSumOfRevenues(); // подсчитать сумму всех выручек всех жильцов
 };
@@ -121,10 +121,10 @@ private:
     ProductList* ptrProductList; // список товаров
     RevenueRecord* ptrRevenueRecord; // список записей выручек
     string productName; // название товара, кол-во продаж которого фиксируем
-    float amountSold; // кол-во продаж
+    int amountSold; // кол-во продаж
     int month; // месяц, за который фиксируем количество продаж
     int art; // артикул товара, кол-во продаж которого фиксируем
-    int prc; // цена товара, кол-во продаж которого фиксируем
+    float prc; // цена товара, кол-во продаж которого фиксируем
 public:
     SellsInputScreen(ProductList* ptrPL, RevenueRecord* ptrRR) : ptrProductList(ptrPL), ptrRevenueRecord(ptrRR)
 
@@ -221,4 +221,3 @@ public:
     ~UserInterface();
     void interact();
 }; // конец класса userInterface
-
