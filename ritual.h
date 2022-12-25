@@ -11,30 +11,13 @@
 #include "revenuerow.h"
 #include "revenuerecord.h"
 #include "sellsinputscreen.h"
-#include "expense.h"
+#include "expenserecord.h"
 using namespace std;
 
 
 //////////////////// глобальные методы //////////////////////
 void getaLine(string& inStr); // получение строки текста
 char getaChar(); // получение символа
-
-///////////////////класс ExpenseRecord/////////////////////
-//Класс записей о затратах
-class ExpenseRecord
-{
-private:
-    vector<Expense*> vectPtrsExpenses; //вектор указателей на расходы
-    vector<Expense*>::iterator iter;
-public:
-    ~ExpenseRecord();
-
-    void insertExp(Expense*);
-    void display();
-    float displaySummary(); // нужно для годового отчета
-};
-
-
 
 ////////////////класс ExpenseInputScreen///////////////////
 //Класс для ввода расходов
