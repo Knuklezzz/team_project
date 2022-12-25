@@ -22,5 +22,6 @@ HEADERS += \
     productinputscreen.h \
     revenuerow.h \
     revenuerecord.h \
-    sellsinputscreen.h
+    sellsinputscreen.h \
+    expense.h
 
