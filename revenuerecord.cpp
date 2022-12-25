@@ -76,7 +76,3 @@ float RevenueRecord::getSumOfRevenues() // сумма всех выручек в
     return sumRevenues;
 }
 
-
-
-
-
