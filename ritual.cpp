@@ -19,7 +19,7 @@ char getaChar() // получение символа
 
 ////////////////методы класса Product///////////////////////
 //в конструкторе задаём название товара, артикул и цену
-Product::Product(string n, int art, int pr) : name(n), article(art), price(pr)
+Product::Product(string n, int art, float pr) : name(n), article(art), price(pr)
 {
     /* тут пусто */
 }
@@ -39,7 +39,7 @@ int Product::getArticle() //геттер возвращает артикул т�
     return article;
 }
 
-int Product::getPrice() //геттер возвращает цену товара
+float Product::getPrice() //геттер возвращает цену товара
 {
     return price;
 }
@@ -106,9 +106,9 @@ int ProductList::getArt(string pName) // получить артикул по н
 }
 //--------------------------------------------------------
 
-int ProductList::getPrc(string pName) // получить цену товара по его названию
+float ProductList::getPrc(string pName) // получить цену товара по его названию
 {
-    int prc;
+    float prc;
     iter = setPtrsProd.begin();		//итератор на начало списка товаров
     while (iter != setPtrsProd.end())	// пока не конец списка
     { // поиск товара в списке (достаем у каждого товара его цену)
@@ -156,7 +156,7 @@ RevenueRow::RevenueRow(int ar) : art(ar) //конструктор
     fill(&revenue[0], &revenue[12], 0);
 }
 //---------------------------------------------------------
-void RevenueRow::setRevenue(int m, float am, int pr) // сеттер выручка за месяц m, выручка - am * pr
+void RevenueRow::setRevenue(int m, int am, float pr) // сеттер выручка за месяц m, выручка - am * pr
 {
     revenue[m] = am * pr; // привязываем оплату к месяцу
 }
@@ -195,7 +195,7 @@ RevenueRecord::~RevenueRecord() // деструктор
     }
 }
 //---------------------------------------------------------
-void RevenueRecord::insertRevenue(int art, int month, float amount, int prc)
+void RevenueRecord::insertRevenue(int art, int month, int amount, float prc)
 {
 
     iter = setPtrsRR.begin(); // Инициализация итератора
