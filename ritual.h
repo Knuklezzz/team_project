@@ -12,25 +12,12 @@
 #include "revenuerecord.h"
 #include "sellsinputscreen.h"
 #include "expenserecord.h"
+#include "expenseinputscreen.h"
 using namespace std;
-
 
 //////////////////// глобальные методы //////////////////////
 void getaLine(string& inStr); // получение строки текста
 char getaChar(); // получение символа
-
-////////////////класс ExpenseInputScreen///////////////////
-//Класс для ввода расходов
-class ExpenseInputScreen
-{
-private:
-    ExpenseRecord* ptrExpenseRecord; // запись о расходах
-public:
-    ExpenseInputScreen(ExpenseRecord*);
-    void setExpense();
-};
-
-
 
 //////////////////класс AnnualReport///////////////////////
 //Класс годового отчета
