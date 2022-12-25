@@ -5,12 +5,14 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     ritual.cpp \
-    product.cpp
+    product.cpp \
+    productlist.cpp
 
 include(deployment.pri)
 qtcAddDeployment()
 
 HEADERS += \
     ritual.h \
-    product.h
+    product.h \
+    productlist.h
 
