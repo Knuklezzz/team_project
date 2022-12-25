@@ -8,70 +8,15 @@
 #include <iomanip>
 #include "productlist.h"
 #include "productinputscreen.h"
+#include "revenuerow.h"
+#include "revenuerecord.h"
+#include "sellsinputscreen.h"
 using namespace std;
+
+
 //////////////////// глобальные методы //////////////////////
 void getaLine(string& inStr); // получение строки текста
 char getaChar(); // получение символа
-
-
-////////////////////класс RevenueRow//////////////////////////
-//класс, хранящий одну табличную строку выручки
-// одна строка таблицы прибыли: артикул и 12 выручек по месяцам
-class RevenueRow
-{
-private:
-    int art; // артикул товара
-    float revenue[12]; // месяцы
-    float prc; //стоимость товара
-public:
-    RevenueRow(int); // конструктор с одним параметром
-    void setRevenue(int, int, float); // подсчитать выручку за месяц
-    float getSumOfRow(); //подсчитать сумму выручек с одного товара за год
-    int getArt(); //Запрос артикула товара
-    float getRevenueM(int); //Запрос выручки за определенный месяц
-};
-
-
-
-
-//////////////////// класс RevenueRecord ///////////////////////
-//класс RevenueRecord. Он хранит непосредственно записи о выручке.
-//С ним будет взаимодействовать экран добавления количества продаж.
-class RevenueRecord
-{
-private:
-    list <RevenueRow*> setPtrsRR; // список указателей на объекты класса RevenueRow
-    list <RevenueRow*>::iterator iter;
-public:
-    ~RevenueRecord();
-    void insertRevenue(int, int, int, float); // добавить выручку
-    void display(); // отобразить все строки с выручками
-    float getSumOfRevenues(); // подсчитать сумму всех выручек всех жильцов
-};
-
-
-
-
-////////////////////класс SellsInputScreen //////////////////
-//Экран для добавления количества продаж
-class SellsInputScreen
-{
-private:
-    ProductList* ptrProductList; // список товаров
-    RevenueRecord* ptrRevenueRecord; // список записей выручек
-    string productName; // название товара, кол-во продаж которого фиксируем
-    int amountSold; // кол-во продаж
-    int month; // месяц, за который фиксируем количество продаж
-    int art; // артикул товара, кол-во продаж которого фиксируем
-    float prc; // цена товара, кол-во продаж которого фиксируем
-public:
-    SellsInputScreen(ProductList* ptrPL, RevenueRecord* ptrRR) : ptrProductList(ptrPL), ptrRevenueRecord(ptrRR)
-
-    {
-        /*тут пусто*/
-    }
-    void setSells(); // добавить количество продаж
-};
 
 
 
