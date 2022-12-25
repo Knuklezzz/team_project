@@ -13,26 +13,12 @@
 #include "sellsinputscreen.h"
 #include "expenserecord.h"
 #include "expenseinputscreen.h"
+#include "annualreport.h"
 using namespace std;
 
 //////////////////// глобальные методы //////////////////////
 void getaLine(string& inStr); // получение строки текста
 char getaChar(); // получение символа
-
-//////////////////класс AnnualReport///////////////////////
-//Класс годового отчета
-class AnnualReport
-{
-private:
-    RevenueRecord* ptrRR; // записи выручек
-    ExpenseRecord* ptrER; // записи расходов
-    float expenses, revenues; // суммы выручек и расходов
-public:
-    AnnualReport(RevenueRecord*, ExpenseRecord*);
-    void display(); // отображение годового отчета
-};
-
-
 
 //////////////////Класс UserInterface//////////////////////
 //Главный класс для запуска приложения:
